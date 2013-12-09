@@ -21,4 +21,6 @@ suites:
 - name: default
   run_list: 
     - "recipe[sensu-server-wrapper::default]"
-  attributes: {}
+  attributes: 
+    sensu-server-wrapper:
+      iptables_enabled: false

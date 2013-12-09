@@ -7,10 +7,12 @@
 # This software is released under the MIT License.
 # http://opensource.org/licenses/mit-license.php
 
-include_recipe "iptables"
-iptables_rule "http_8080"
-iptables_rule "rabbitmq"
-iptables_rule "ssh"
+if node["sensu-server-wrapper"]["iptables_enabled"]
+  include_recipe "iptables"
+  iptables_rule "http_8080"
+  iptables_rule "rabbitmq"
+  iptables_rule "ssh"
+end
 
 include_recipe "yum::epel"
 package "erlang" do
