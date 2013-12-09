@@ -1,6 +1,5 @@
 site :opscode
-cookbook 'yum'
-cookbook 'iptables'
+
+metadata
 
 cookbook 'sensu', git:"https://github.com/sensu/sensu-chef.git"
-
