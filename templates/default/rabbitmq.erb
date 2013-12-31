@@ -1,1 +1,1 @@
--A FWR -m tcp -p tcp --dport 5672 -j ACCEPT
+-A FWR -m tcp -p tcp --dport <%= node["sensu"]["rabbitmq"]["port"] %> -j ACCEPT

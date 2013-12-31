@@ -11,6 +11,7 @@ if node["sensu-server-wrapper"]["iptables_enabled"]
   include_recipe "iptables"
   iptables_rule "http_8080"
   iptables_rule "rabbitmq"
+  iptables_rule "sensu_api"
   iptables_rule "ssh"
 end
 
