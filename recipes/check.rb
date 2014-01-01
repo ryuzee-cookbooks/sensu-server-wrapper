@@ -7,18 +7,18 @@
 # This software is released under the MIT License.
 # http://opensource.org/licenses/mit-license.php
 
-template "/etc/sensu/conf.d/handler_default.json" do
+template "/etc/sensu/conf.d/handler-default.json" do
   owner "sensu"
   group "sensu"
   mode  0755
-  source "handler_default.json.erb"
+  source "handler-default.json.erb"
 end
 
-template "/etc/sensu/conf.d/check_cron.json" do
+template "/etc/sensu/conf.d/check-cron.json" do
   owner "sensu"
   group "sensu"
   mode  0755
-  source "check_cron.json.erb"
+  source "check-cron.json.erb"
 end
 
 template "/etc/sensu/conf.d/check-disk.json" do
@@ -26,6 +26,13 @@ template "/etc/sensu/conf.d/check-disk.json" do
   group "sensu"
   mode  0755
   source "check-disk.json.erb"
+end
+
+template "/etc/sensu/conf.d/check-cpu.json" do
+  owner "sensu"
+  group "sensu"
+  mode  0755
+  source "check-cpu.json.erb"
 end
 
 template "/etc/sensu/conf.d/load-metrics.json" do
