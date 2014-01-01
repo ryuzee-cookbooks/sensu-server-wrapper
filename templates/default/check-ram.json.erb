@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "check-ram": {
+      "handlers": ["default"],
+      "command": "/etc/sensu/plugins/check-ram.rb -w 10 -c 5",
+      "interval": 60,
+      "subscribers": ["all"]
+    }
+  }
+}
+

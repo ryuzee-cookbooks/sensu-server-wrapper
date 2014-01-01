@@ -35,6 +35,13 @@ template "/etc/sensu/conf.d/check-cpu.json" do
   source "check-cpu.json.erb"
 end
 
+template "/etc/sensu/conf.d/check-ram.json" do
+  owner "sensu"
+  group "sensu"
+  mode  0755
+  source "check-ram.json.erb"
+end
+
 template "/etc/sensu/conf.d/load-metrics.json" do
   owner "sensu"
   group "sensu"
