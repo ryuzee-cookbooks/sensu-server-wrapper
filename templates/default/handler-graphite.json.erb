@@ -1,0 +1,12 @@
+{
+  "handlers": {
+    "graphite": {
+      "type": "tcp",
+      "socket": {
+        "host": "<%= node["sensu"]["graphite"]["host"] %>",
+        "port": <%= node["sensu"]["graphite"]["port"] %> 
+      },
+      "mutator": "graphite"
+    }
+  }
+}
