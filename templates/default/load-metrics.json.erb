@@ -1,7 +1,7 @@
 {
   "checks": {
     "load_metrics": {
-      "handlers": ["default"],
+      "handlers": ["graphite"],
       "type": "metric",
       "command": "/etc/sensu/plugins/load-metrics.rb --scheme stats.:::name:::",
       "subscribers": ["all"],
