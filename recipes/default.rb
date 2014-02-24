@@ -9,10 +9,26 @@
 
 if node["sensu-server-wrapper"]["iptables_enabled"]
   include_recipe "iptables"
-  iptables_rule "http_8080"
+  iptables_rule "sensu_dashboard"
   iptables_rule "rabbitmq"
   iptables_rule "sensu_api"
   iptables_rule "ssh"
+end
+
+if node["sensu-server-wrapper"]["use_apache"]
+  include_recipe "apache2"
+  template "/etc/httpd/conf.d/sensu.conf" do
+    owner "root"
+    group "root"
+    mode "0644"
+    source "sensu.conf.erb"
+  end 
+  if node["sensu-server-wrapper"]["iptables_enabled"]
+    iptables_rule "http"
+  end
+  service "httpd" do
+    action :restart
+  end
 end
 
 include_recipe "yum-epel"

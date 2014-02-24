@@ -1,0 +1,6 @@
+<VirtualHost *:80>
+LoadModule  proxy_module         modules/mod_proxy.so
+LoadModule  proxy_http_module    modules/mod_proxy_http.so
+ProxyPass / http://127.0.0.1:<%= node["sensu"]["dashboard"]["port"] %>/
+ProxyPassReverse / http://127.0.0.1:<%= node["sensu"]["dashboard"]["port"] %>/
+</VirtualHost>
