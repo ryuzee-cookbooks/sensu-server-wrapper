@@ -9,10 +9,10 @@
 
 if node["sensu-server-wrapper"]["iptables_enabled"]
   include_recipe "iptables"
-  iptables_rule "sensu_dashboard"
-  iptables_rule "rabbitmq"
-  iptables_rule "sensu_api"
-  iptables_rule "ssh"
+  iptables_rule "iptables/sensu_dashboard"
+  iptables_rule "iptables/rabbitmq"
+  iptables_rule "iptables/sensu_api"
+  iptables_rule "iptables/ssh"
 end
 
 if node["sensu-server-wrapper"]["use_apache"]
@@ -24,7 +24,7 @@ if node["sensu-server-wrapper"]["use_apache"]
     source "sensu.conf.erb"
   end 
   if node["sensu-server-wrapper"]["iptables_enabled"]
-    iptables_rule "http"
+    iptables_rule "iptables/http"
   end
   service "httpd" do
     action :restart
