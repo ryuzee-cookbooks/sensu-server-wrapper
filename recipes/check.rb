@@ -78,4 +78,8 @@ service "sensu-server" do
   action :restart
 end
 
+service "sensu-api" do
+  action :restart
+end
+
 # vim: filetype=ruby.chef
