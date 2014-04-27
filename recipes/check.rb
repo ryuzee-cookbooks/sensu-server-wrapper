@@ -56,6 +56,13 @@ template "/etc/sensu/conf.d/vmstat-metrics.json" do
   source "vmstat-metrics.json.erb"
 end
 
+template "/etc/sensu/conf.d/disk-usage-metrics.json" do
+  owner "sensu"
+  group "sensu"
+  mode  0755
+  source "disk-usage-metrics.json.erb"
+end
+
 remote_file "/etc/sensu/plugins/graphite.rb" do
   source "https://github.com/sensu/sensu-community-plugins/raw/master/mutators/graphite.rb"
 end
