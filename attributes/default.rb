@@ -17,5 +17,6 @@ default["sensu"]["graphite"]["host"] = "localhost"
 default["sensu"]["graphite"]["port"] = 2003 
 
 default["sensu-server-wrapper"]["iptables_enabled"] = true
+default["sensu-server-wrapper"]["use_apache"] = false 
 
 # vim: filetype=ruby.chef
