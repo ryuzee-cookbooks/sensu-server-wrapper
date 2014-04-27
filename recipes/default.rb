@@ -9,10 +9,10 @@
 
 if node["sensu-server-wrapper"]["iptables_enabled"]
   include_recipe "iptables"
-  iptables_rule "iptables/sensu_dashboard"
-  iptables_rule "iptables/rabbitmq"
-  iptables_rule "iptables/sensu_api"
-  iptables_rule "iptables/ssh"
+  iptables_rule "iptables_sensu_dashboard"
+  iptables_rule "iptables_rabbitmq"
+  iptables_rule "iptables_sensu_api"
+  iptables_rule "iptables_ssh"
 end
 
 if node["sensu-server-wrapper"]["use_apache"]
