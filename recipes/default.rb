@@ -24,7 +24,7 @@ if node["sensu-server-wrapper"]["use_apache"]
     source "sensu.conf.erb"
   end 
   if node["sensu-server-wrapper"]["iptables_enabled"]
-    iptables_rule "iptables/http"
+    iptables_rule "iptables_http"
   end
   service "httpd" do
     action :restart
