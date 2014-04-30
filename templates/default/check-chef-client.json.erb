@@ -1,0 +1,10 @@
+{
+  "checks": {
+    "chef_check": {
+      "handlers": ["default"],
+      "command": "/etc/sensu/plugins/check-procs.rb -p chef-client -C 1 ",
+      "interval": 60,
+      "subscribers": ["all"]
+    }
+  }
+}
