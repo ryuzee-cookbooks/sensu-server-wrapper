@@ -8,5 +8,5 @@ version          '0.3.2'
 depends          'iptables'
 depends          'yum', "~> 3.0.4"
 depends          'yum-epel'
-depends          'sensu', "~> 0.8.0"
+depends          'sensu', "~> 1.0.0"
 depends          'apache2', "= 0.2.0"
