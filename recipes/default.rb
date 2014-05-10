@@ -16,7 +16,7 @@ if node["sensu-server-wrapper"]["iptables_enabled"]
 end
 
 if node["sensu-server-wrapper"]["use_apache"]
-  include_recipe "apache2"
+  include_recipe "apache2-simple"
   template "/etc/httpd/conf.d/sensu.conf" do
     owner "root"
     group "root"
