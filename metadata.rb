@@ -10,3 +10,4 @@ depends          'yum', "~> 3.0.4"
 depends          'yum-epel'
 depends          'sensu', "~> 1.0.0"
 depends          'apache2-simple'
+depends          "redisio", "~> 1.7"
