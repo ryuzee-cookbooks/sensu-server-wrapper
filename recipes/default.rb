@@ -7,6 +7,11 @@
 # This software is released under the MIT License.
 # http://opensource.org/licenses/mit-license.php
 
+case node["platform"]
+when "centos", "redhat", "amazon", "scientific", "fedora"
+  include_recipe "ca-certificates::default"
+end
+
 if node["sensu-server-wrapper"]["iptables_enabled"]
   include_recipe "iptables"
   iptables_rule "iptables_sensu_dashboard"
