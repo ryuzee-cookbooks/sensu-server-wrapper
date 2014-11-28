@@ -9,6 +9,6 @@ depends          'ca-certificates'
 depends          'iptables'
 depends          'yum'
 depends          'yum-epel'
-depends          'sensu', "~> 1.0.0"
+depends          'sensu', "~> 2.2"
 depends          'apache2-simple'
 depends          "redisio", "~> 1.7"
