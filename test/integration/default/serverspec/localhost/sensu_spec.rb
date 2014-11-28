@@ -13,7 +13,7 @@ end
   end
 end
 
-%w[5672 6379 9000 8080].each do |port|
+%w[5672 6379 9000].each do |port|
   describe port(port) do
     it { should be_listening }
   end
