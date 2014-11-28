@@ -14,7 +14,6 @@ end
 
 if node["sensu-server-wrapper"]["iptables_enabled"]
   include_recipe "iptables"
-  iptables_rule "iptables_sensu_dashboard"
   iptables_rule "iptables_rabbitmq"
   iptables_rule "iptables_sensu_api"
   iptables_rule "iptables_ssh"
@@ -47,7 +46,6 @@ include_recipe "sensu::default"
 include_recipe "sensu::rabbitmq"
 include_recipe "sensu::redis"
 include_recipe "sensu::api_service"
-include_recipe "sensu::dashboard_service"
 include_recipe "sensu::server_service"
 
 # vim: filetype=ruby.chef
