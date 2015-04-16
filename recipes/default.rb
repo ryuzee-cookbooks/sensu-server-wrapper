@@ -19,22 +19,6 @@ if node["sensu-server-wrapper"]["iptables_enabled"]
   iptables_rule "iptables_ssh"
 end
 
-if node["sensu-server-wrapper"]["use_apache"]
-  include_recipe "apache2-simple"
-  template "/etc/httpd/conf.d/sensu.conf" do
-    owner "root"
-    group "root"
-    mode "0644"
-    source "sensu.conf.erb"
-  end 
-  if node["sensu-server-wrapper"]["iptables_enabled"]
-    iptables_rule "iptables_http"
-  end
-  service "httpd" do
-    action :restart
-  end
-end
-
 include_recipe "yum-epel"
 
 package "erlang" do
